@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ezcode-adal-angular5 sample</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item" [routerLinkActive]="['active']" *ngIf="adalService.userInfo"> -->
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/home']">
+                    <span class='glyphicon glyphicon-home'></span> Home
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/about']">
+                    <span class='glyphicon glyphicon-education'></span>About
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" [routerLink]="['/order']">
+                    <span class='glyphicon glyphicon-th-list'></span>Order
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/msgraph']">
+                        <span class='glyphicon glyphicon-th-list'></span>MS Graph
+                    </a>
+                </li>
+            </ul>
+        <span class="navbar-text" *ngIf="!isAuthenticated">
+            <a class="nav-link" (click)="login()"><span>Login</span></a>
+        </span>
+        <span class="navbar-text" *ngIf="isAuthenticated">
+                Welcome {{adalService.userInfo.displayName}}!
+            </span>
+        </div>
+</nav>

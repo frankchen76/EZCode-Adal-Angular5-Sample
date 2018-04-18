@@ -1,0 +1,37 @@
+<div class="row">
+  <H3>
+    Order
+  </H3>
+</div>
+<div class="row">
+    <ngx-loading [show]="_loading" [config]="{ backdropBorderRadius: '14px',fullScreenBackdrop:true }"></ngx-loading>
+
+    <table class="table-responsive-sm table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+            <th scope="col">User</th>
+            <th scope="col">category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let allowance of _allowances">
+            <th scope="row">{{allowance.Id}}</th>
+            <td>{{allowance.Title}}</td>
+            <td>{{allowance.Amount}}</td>
+            <td>{{allowance.User}}</td>
+            <td>{{allowance.IssueDate}}</td>
+            <td></td>
+            <!-- <td>{{allowance.AllowanceCategory.Category}}</td> -->
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+
+
+<button button type="button" class="btn btn-primary" (click)="test()">Test</button>
+<button button type="button" class="btn btn-primary" (click)="testSpinner()">TestSpinner</button>

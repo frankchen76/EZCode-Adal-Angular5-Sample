@@ -1,0 +1,14 @@
+<p>
+    msgraph works!
+</p>
+<div class="row">
+    <ngx-loading [show]="_loading" [config]="{ backdropBorderRadius: '14px',fullScreenBackdrop:true }"></ngx-loading>
+    <div class="col-sm-12">
+        <ul class="list-group">
+            <li *ngFor="let item of _jsonResult"><b>{{item.name}}</b>:{{item.value}}</li>
+        </ul>
+    </div>
+    <div class="col-sm-12">
+        <button button type="button" class="btn btn-primary" (click)="test()">Test</button>
+    </div>
+</div>
